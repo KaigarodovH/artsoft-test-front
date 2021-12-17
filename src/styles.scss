@@ -1,1 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
+$primary-color:#7860cc;
+$secondary-color:#f4f7fd;
+$default-color: white;
+
+//TODO: кажется это можно считать
+$navigation-max-height: 7vh;
+$free-max-height: 93vh;
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+nav,footer,header,aside{display: block;}
+ul {list-style: none;}
+a, a:hover, a:focus, a:active {
+	text-decoration: none;
+	color: inherit;
+}
+html,body{
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+    background-color: $secondary-color;
+}
+
+header{
+	background-color: $primary-color;
+	color: $secondary-color;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: $navigation-max-height;
+}
+
+main {
+    max-width: 1480px;
+    margin: 0 auto;
+}
+input,button,textarea{font-family:inherit;}
+button{cursor: pointer;}
+
+
+
+
+

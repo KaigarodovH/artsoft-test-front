@@ -1,0 +1,10 @@
+.navigation {
+    display: flex;
+}
+.navigation__link {
+    border: 1px solid black;
+    padding: 10px 30px;
+    & a {
+        font-size: 20px;
+    }
+}

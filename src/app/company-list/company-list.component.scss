@@ -1,0 +1,18 @@
+@import "../style/base.scss";
+
+.company-list-wrapper{
+    display: flex;
+    flex-direction: column;
+    //TODO: надо бы вынести
+    max-height: 93vh;
+}
+
+.company-list__tools{
+    display: flex;
+    background-color: $secondary-color;
+    justify-content: space-around;
+}
+
+.company-list__items{
+    overflow-y: scroll;
+}

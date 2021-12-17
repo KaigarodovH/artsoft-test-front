@@ -1,0 +1,30 @@
+.company-wrapper{
+    //TODO: Вынести 10 в отдельную перменную растояния
+    padding: 10px;
+    cursor: pointer;
+    width: 90vh;
+    margin: 0 auto;
+}
+
+.company-content{
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 120px;
+    border-radius: 10px;
+}
+
+.company-content__logo {
+    padding: 15px;
+    & img{
+        max-width: 250px;
+    }
+} 
+
+.company-content__discription {
+    padding: 15px;
+    flex: 1 0 auto;
+    max-width: 400px;
+}

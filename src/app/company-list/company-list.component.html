@@ -1,0 +1,15 @@
+<div class="company-list-wrapper">
+    <div class="company-list__tools">
+        <h2>Choise you company:</h2>
+        <app-company-filter></app-company-filter>
+        <app-company-sort></app-company-sort>
+    </div>
+    <div class="company-list__items">
+        <div *ngFor="let company of companies">
+            <a routerLink="/detail/{{company.id}}">
+                <app-company-item [company]="company" ></app-company-item>
+            </a>
+        </div>
+    </div>
+</div>
+
