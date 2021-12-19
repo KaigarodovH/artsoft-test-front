@@ -1,1 +1,12 @@
-<p>company-sort works!</p>
+<form [formGroup]="sortForm" class="company-sort-wrapper">
+    <h3>Sort by:</h3>
+    <select formControlName="sortField">
+        <option [ngValue]="null" disabled>Select property</option>
+        <option
+            *ngFor="let option of sortOptions"
+            [ngValue]="option.key"
+            >
+            {{option.text}}
+        </option>
+    </select>
+</form>

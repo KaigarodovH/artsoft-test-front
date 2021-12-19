@@ -1,1 +1,13 @@
-<p>company-filter works!</p>
+<form [formGroup]="filterForm">
+    <h3>Filter by:</h3>
+    <select formControlName="selectKey">
+        <option [ngValue]="null" disabled>Select filer</option>
+        <option 
+            *ngFor="let option of filterOptions"
+            [ngValue]="option.key"
+            >
+            {{option.text}}
+        </option>
+    </select>
+    <input id="filter" type="text" formControlName="filter" placeholder="input filter"/>
+</form>

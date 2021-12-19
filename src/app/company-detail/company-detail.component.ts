@@ -24,7 +24,8 @@ export class CompanyDetailComponent implements OnInit {
 
   getCompany():void {
     const id = Number(this.route.snapshot.paramMap.get('id'))
-    this.company = this.companyService.getCompany(id);
+    this.companyService.getCompany(id).subscribe(
+      company => this.company = company
+    );
   }
-
 }

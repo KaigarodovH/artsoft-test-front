@@ -1,15 +1,16 @@
 <div class="company-wrapper">
-    <div class="company-content">
-        <div class="company-content__logo">
-            <img [src]="company.logo" [alt]="'logo of '+company.business_name">
+    <a routerLink="/detail/{{company.id}}">
+        <div class="company-content">
+            <div class="company-content__logo">
+                <img [src]="company.logo" [alt]="'logo of '+company.business_name">
+            </div>
+            <div class="company-content__discription">
+                <h2>Name: {{company.business_name}}</h2>
+                <h3>Strategize: {{company.bs_company_statement}}</h3>
+                <h3>Industry: {{company.industry}}</h3>
+                <h3>Phone: {{company.phone_number}}</h3>
+                <h3>Adress: {{company.full_address}}</h3>
+            </div>
         </div>
-        <div class="company-content__discription">
-            <h2>Name: {{company.business_name}}</h2>
-            <h3>Strategize: {{company.bs_company_statement}}</h3>
-            <h3>Industry: {{company.industry}}</h3>
-            <h3>Phone: {{company.phone_number}}</h3>
-            <h3>Adress: {{company.full_address}}</h3>
-        </div>
-    </div>
-    
+    </a>
 </div>
