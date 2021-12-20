@@ -1,5 +1,6 @@
-<form [formGroup]="filterForm">
+<form [formGroup]="filterForm" class="company-filter-wrapper">
     <h3>Filter by:</h3>
+    <input id="filter" type="text" formControlName="filter" placeholder="input filter"/>
     <select formControlName="selectKey">
         <option [ngValue]="null" disabled>Select filer</option>
         <option 
@@ -9,5 +10,4 @@
             {{option.text}}
         </option>
     </select>
-    <input id="filter" type="text" formControlName="filter" placeholder="input filter"/>
 </form>

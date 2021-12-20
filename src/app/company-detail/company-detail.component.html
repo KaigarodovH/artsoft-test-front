@@ -1,9 +1,11 @@
-<div *ngIf="company">
-    <img [src]="company.logo" [alt]="'logo of '+company.business_name">
-    <h2>Name: {{company.business_name}}</h2>
-    <h3>Strategize: {{company.bs_company_statement}}</h3>
-    <h3>Industry: {{company.industry}}</h3>
-    <h3>Phone: {{company.phone_number}}</h3>
-    <h3>Adress: {{company.full_address}}</h3>
-    <h3>{{company.catch_phrase}}</h3>
+<div *ngIf="company" class="company-detail-wrapper">
+    <img [src]="company.logo" class="company-detail__logo" [alt]="'logo of '+company.business_name">
+    <div class="copmany-detail__discription">
+        <h2>Name: {{company.business_name}}</h2>
+        <h3>Strategize: {{company.bs_company_statement}}</h3>
+        <h3>Industry: {{company.industry}}</h3>
+        <h3>Phone: {{company.phone_number}}</h3>
+        <h3>Adress: {{company.full_address}}</h3>
+        <h3>{{company.catch_phrase}}</h3>
+    </div>
 </div>

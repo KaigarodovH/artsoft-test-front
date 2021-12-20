@@ -2,21 +2,31 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { ICompany } from '../model/company';
 import { JSONstr } from './data';
+import { ApiService } from './api.service';
+
 @Injectable({
   providedIn: 'root'
 })
 export class CompanyService {
 
-  public companies: ICompany[]
-  public subscriber: any
-  public sourceCompanies: ICompany[]
+  public companies: ICompany[] = [];
+  public sourceCompanies: ICompany[]=[];
+  public subscriber: any;
 
-  constructor() {
+  constructor(private api: ApiService) {
+  }
 
-    let obj = JSON.parse(JSONstr)
-    this.sourceCompanies = obj.slice()
-    this.companies = obj
-    console.log(obj)
+  public fetchData(){ 
+    let response = this.api.fetchData()
+    response.subscribe(
+      data => {
+        console.log(data)
+        this.sourceCompanies = data.slice();
+        this.companies = data;
+        //TODO: Ну и на сколько это адевкатно 
+        this.subscriber.next(this.companies)
+      }
+    )
   }
 
   public getCompany(id: number): Observable<ICompany> {
@@ -25,6 +35,9 @@ export class CompanyService {
   }
 
   public getCompanies(): Observable<ICompany[]> {
+    if(this.companies.length == 0){
+      this.fetchData();
+    } 
     //TODO: Нужна ли отписка ?
     const observable = new Observable<ICompany[]>((subscriber) => {
       this.subscriber = subscriber;

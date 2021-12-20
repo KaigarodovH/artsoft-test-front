@@ -2,9 +2,26 @@
     display: flex;
 }
 .navigation__link {
-    border: 1px solid black;
-    padding: 10px 30px;
+    padding: 10px 0;
     & a {
+        padding: 0 20px;
         font-size: 20px;
+        font-weight: 400;
+        transition: background-color 300ms;
+        
+        &:hover{
+            background-color: rgb(151, 133, 228);
+        }
+
+        &:active{
+            background-color: #edf1f8;
+        }
     }
+    
+}
+
+.fake-logo {
+    padding: 0 10px;
+    background-color: rgb(151, 133, 228);
+    border-radius: 50px;
 }

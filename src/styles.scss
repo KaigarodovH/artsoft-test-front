@@ -16,6 +16,10 @@ a, a:hover, a:focus, a:active {
 	text-decoration: none;
 	color: inherit;
 }
+input, select{
+	outline: none;
+	border: none;
+}
 html,body{
 	height: 100%;
 	width: 100%;
@@ -39,8 +43,16 @@ header{
 }
 
 main {
-    max-width: 1480px;
+    max-width: 1200px;
     margin: 0 auto;
+}
+
+h1,h3,h2,p,a,select,input[type="text"] {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 300;
+}
+h3,p,a,select,input{
+	font-size: 17px;
 }
 input,button,textarea{font-family:inherit;}
 button{cursor: pointer;}

@@ -1,1 +1,14 @@
-<p>company-yandex-map works!</p>
+<div class="company-map-wrapper">
+    <div class="company-map__list">
+        <div class="company-map__country" 
+        *ngFor="let company of companies; let i = index" 
+        (click)="addMark(company.id)">
+            <div class="company-wrapper" [class.company-wrapper_blue]="i%2">
+                <h3><span>id:</span> {{company.id}}</h3>
+                <h3><span>name:</span>  {{company.business_name}}</h3>
+                <h3><span>indastry:</span> {{company.industry}}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="company-map__display" id="map"></div>
+</div>

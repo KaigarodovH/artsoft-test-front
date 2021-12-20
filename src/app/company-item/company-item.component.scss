@@ -4,16 +4,23 @@
     cursor: pointer;
     width: 90vh;
     margin: 0 auto;
+    position: relative;
 }
-
+.company-content:hover{
+    border: 2px solid #7860cc;
+}
 .company-content{
-    border: 1px solid black;
+    position: relative;
+    border: 2px solid white;
+    background-color: white;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     min-height: 120px;
-    border-radius: 10px;
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
 }
 
 .company-content__logo {
@@ -27,4 +34,13 @@
     padding: 15px;
     flex: 1 0 auto;
     max-width: 400px;
+    & h3, h2 {
+        line-height: 25px;
+    }
+    & h2 {
+        font-weight: 400;
+    }
+    & span {
+        border-bottom: 2px solid #7760cc93;
+    }
 }
