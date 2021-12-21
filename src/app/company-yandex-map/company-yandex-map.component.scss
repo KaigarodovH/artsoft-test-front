@@ -1,36 +1,36 @@
-.company-map-wrapper{
-    display: flex;
-    max-height: 93vh;
-    justify-content: space-around;
+.company-map-wrapper {
+  display: flex;
+  max-height: 93vh;
+  justify-content: space-around;
 }
 .company-map__display {
-    flex: 1 0 auto;
-    min-width: 250px;
-    height: 50vh;
+  flex: 1 0 auto;
+  min-width: 250px;
+  height: 50vh;
 }
 
 .company-map__list {
-    overflow-y: scroll;
-    width: 400px;
-    min-width: 250px;
+  overflow-y: scroll;
+  width: 400px;
+  min-width: 250px;
 }
 
-.company-map__country{
-    padding: 0 10px;
+.company-map__country {
+  padding: 0 10px;
 }
 
 .company-wrapper {
-    background-color: white;
-    padding: 10px;
-    box-shadow: 5px 5px 5px -7px rgba(34, 60, 80, 0.6) inset;
-    cursor: pointer;
-    & h3 {
-        line-height: 30px;
-    }
-    & span {
-        font-weight: 400;
-    }
+  background-color: white;
+  padding: 10px;
+  box-shadow: 5px 5px 5px -7px rgba(34, 60, 80, 0.6) inset;
+  cursor: pointer;
+  & h3 {
+    line-height: 30px;
+  }
+  & span {
+    font-weight: 400;
+  }
 }
-.company-wrapper_blue{
-    background-color: #7760cc21;
+.company-wrapper_blue {
+  background-color: #7760cc21;
 }

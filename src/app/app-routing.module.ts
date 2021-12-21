@@ -10,6 +10,7 @@ const routes: Routes = [
   {path:"list", component: CompanyListComponent},
   {path:"detail/:id", component: CompanyDetailComponent},
   {path:"map", component: CompanyYandexMapComponent},
+  {path:"", redirectTo:"/list", pathMatch:'full'},
 ]
 
 @NgModule({

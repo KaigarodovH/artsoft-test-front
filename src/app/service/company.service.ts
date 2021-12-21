@@ -34,14 +34,14 @@ export class CompanyService {
     return of(company)
   }
 
-  public getCompanies(): Observable<ICompany[]> {
+  public getCompanies(immutable=false): Observable<ICompany[]> {
     if(this.companies.length == 0){
       this.fetchData();
-    } 
+    }
     //TODO: Нужна ли отписка ?
     const observable = new Observable<ICompany[]>((subscriber) => {
       this.subscriber = subscriber;
-      this.subscriber.next(this.companies)
+      this.subscriber.next( immutable ? this.sourceCompanies : this.companies)
     })
     return observable;
   }
