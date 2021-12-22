@@ -1,14 +1,16 @@
-.company-sort-wrapper{
-    padding:4px;
-    border-radius: 5px;
-    background-color: #7760cc44;
-    display: flex;
-    align-items: center;
-    & h3{
-        padding-right: 5px;
-    }
-    & select {
-        height: 30px;
-        padding: 0 10px;
-    }
+.company-sort-wrapper {
+  margin: 5px;
+
+  padding: 4px;
+  border-radius: 5px;
+  background-color: #7760cc44;
+  display: flex;
+  align-items: center;
+  & h3 {
+    padding-right: 5px;
+  }
+  & select {
+    height: 30px;
+    padding: 0 10px;
+  }
 }

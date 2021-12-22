@@ -45,7 +45,7 @@ export class CompanyYandexMapComponent implements OnInit {
       this.objectManager = new ymaps.ObjectManager({
         clusterize: true,
         gridSize: 32,
-        clusterDisableClickZoom: true
+        clusterDisableClickZoom: true,
       });
       this.objectManager.objects.options.set('preset', 'islands#violetDotIcon');
       this.objectManager.clusters.options.set('preset', 'islands#violetClusterIcons');
@@ -69,7 +69,7 @@ export class CompanyYandexMapComponent implements OnInit {
           }
       })
     }
-    this.objectManager.add(data)
+    this.objectManager.add(data);
   }
 
   moveToCompany(company:ICompany):void{

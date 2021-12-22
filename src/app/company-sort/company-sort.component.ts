@@ -29,7 +29,7 @@ export class CompanySortComponent implements OnInit {
       }
     )
     this.sortForm.get("sortField")?.valueChanges.subscribe(
-      selectValue =>  this.companyService.sortBy(selectValue)
+      selectValue => this.companyService.sortBy(selectValue)
     )
   }
 }

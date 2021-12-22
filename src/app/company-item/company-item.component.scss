@@ -1,46 +1,43 @@
-.company-wrapper{
-    //TODO: Вынести 10 в отдельную перменную растояния
-    padding: 10px;
-    cursor: pointer;
-    width: 90vh;
-    margin: 0 auto;
-    position: relative;
+.company-wrapper {
+  padding: 10px;
+  cursor: pointer;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
 }
-.company-content:hover{
-    border: 2px solid #7860cc;
+.company-content:hover {
+  border: 2px solid #7860cc;
 }
-.company-content{
-    position: relative;
-    border: 2px solid white;
-    background-color: white;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    min-height: 120px;
-    -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
-    -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
-    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+.company-content {
+  position: relative;
+  border: 2px solid white;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 120px;
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
 }
 
 .company-content__logo {
-    padding: 15px;
-    & img{
-        max-width: 250px;
-    }
-} 
+  padding: 15px;
+  & img {
+    max-width: 250px;
+  }
+}
 
 .company-content__discription {
-    padding: 15px;
-    flex: 1 0 auto;
-    max-width: 400px;
-    & h3, h2 {
-        line-height: 25px;
-    }
-    & h2 {
-        font-weight: 400;
-    }
-    & span {
-        border-bottom: 2px solid #7760cc93;
-    }
+  padding: 15px;
+  max-width: 400px;
+  & h3,
+  h2 {
+    line-height: 25px;
+  }
+  & h2 {
+    font-weight: 400;
+  }
+  & span {
+    border-bottom: 2px solid #7760cc93;
+  }
 }

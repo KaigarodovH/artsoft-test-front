@@ -14,6 +14,7 @@ export class CompanyService {
   public subscriber: any;
 
   constructor(private api: ApiService) {
+      console.log("SERVICE CONSTRUCTOR")
   }
 
   public fetchData(){ 

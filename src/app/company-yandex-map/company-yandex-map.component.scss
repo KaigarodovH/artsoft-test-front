@@ -16,7 +16,6 @@
 }
 
 .company-map__country {
-  padding: 0 10px;
 }
 
 .company-wrapper {
@@ -33,4 +32,17 @@
 }
 .company-wrapper_blue {
   background-color: #7760cc21;
+}
+
+@media (max-width: 1100px) {
+  .company-map-wrapper {
+    flex-direction: column;
+  }
+  .company-map__display {
+    max-height: 40vh;
+    order: -1;
+  }
+  .company-map__list {
+    margin: 0 auto;
+  }
 }

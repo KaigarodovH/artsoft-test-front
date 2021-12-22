@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { ICompany } from '../model/company';
 import { CompanyService } from '../service/company.service';
 
@@ -10,8 +11,9 @@ import { CompanyService } from '../service/company.service';
 export class CompanyListComponent implements OnInit {
   
   private companyService: CompanyService;
-
   public companies: ICompany[] = [];
+  private subscriber!:Subscription;
+
   constructor(companyService: CompanyService) { 
     this.companyService = companyService;
     console.log("CL")
@@ -22,16 +24,21 @@ export class CompanyListComponent implements OnInit {
     console.log("CL1")
   }
 
+  ngOnDestroy(){
+      if (this.subscriber) {
+          this.subscriber.unsubscribe()
+        }
+      console.log("del cl1")
+  }
+
   getCompanies(){
-    this.companyService.getCompanies().subscribe(
+    this.subscriber = this.companyService.getCompanies().subscribe(
       {
         next: (companies)=>{
           console.log(companies);
           this.companies = companies
         }
       }
-      //companies => this.companies = companies
     );
   }
-
 }
