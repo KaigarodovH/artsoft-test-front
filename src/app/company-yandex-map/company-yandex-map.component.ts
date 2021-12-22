@@ -1,3 +1,4 @@
+import { Subscriber, Subscription } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { ICompany } from '../model/company';
 import { CompanyService } from '../service/company.service';
@@ -13,6 +14,7 @@ export class CompanyYandexMapComponent implements OnInit {
   public map!:ymaps.Map;
   public objectManager!:ymaps.ObjectManager;
   public companies:ICompany[] = [];
+  private subscriber!:Subscription;
 
   constructor(public companyService: CompanyService) {
   }
@@ -22,10 +24,14 @@ export class CompanyYandexMapComponent implements OnInit {
         this.addMarks();
     })
   }
-  
+  ngOnDestroy(): void {
+    if (this.subscriber){
+      this.subscriber.unsubscribe()
+    }
+  }
   getCompanies():Promise<any>{
     let promise = new Promise((res,rej)=>{
-        this.companyService.getCompanies(true)
+        this.subscriber = this.companyService.getCompanies(true)
         .subscribe(
             (companies)=>{this.companies = companies;
             if(this.companies.length !==0){

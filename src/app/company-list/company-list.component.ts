@@ -16,26 +16,22 @@ export class CompanyListComponent implements OnInit {
 
   constructor(companyService: CompanyService) { 
     this.companyService = companyService;
-    console.log("CL")
   }
 
   ngOnInit(): void {
     this.getCompanies()
-    console.log("CL1")
   }
 
   ngOnDestroy(){
-      if (this.subscriber) {
-          this.subscriber.unsubscribe()
-        }
-      console.log("del cl1")
+    if (this.subscriber) {
+        this.subscriber.unsubscribe()
+    }
   }
 
   getCompanies(){
     this.subscriber = this.companyService.getCompanies().subscribe(
       {
         next: (companies)=>{
-          console.log(companies);
           this.companies = companies
         }
       }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subscriber } from 'rxjs';
 import { ICompany } from '../model/company';
 import { JSONstr } from './data';
 import { ApiService } from './api.service';
@@ -11,21 +11,22 @@ export class CompanyService {
 
   public companies: ICompany[] = [];
   public sourceCompanies: ICompany[]=[];
-  public subscriber: any;
+  public subscriber!: Subscriber<ICompany[]>;
 
   constructor(private api: ApiService) {
-      console.log("SERVICE CONSTRUCTOR")
+    this.fetchData();
   }
 
   public fetchData(){ 
     let response = this.api.fetchData()
     response.subscribe(
       data => {
-        console.log(data)
         this.sourceCompanies = data.slice();
         this.companies = data;
-        //TODO: Ну и на сколько это адевкатно 
-        this.subscriber.next(this.companies)
+        //При получении данных сразу отправляем их подписчику, если он есть
+        if(this.subscriber){
+            this.subscriber.next(this.companies)
+        }
       }
     )
   }
@@ -36,13 +37,9 @@ export class CompanyService {
   }
 
   public getCompanies(immutable=false): Observable<ICompany[]> {
-    if(this.companies.length == 0){
-      this.fetchData();
-    }
-    //TODO: Нужна ли отписка ?
     const observable = new Observable<ICompany[]>((subscriber) => {
-      this.subscriber = subscriber;
-      this.subscriber.next( immutable ? this.sourceCompanies : this.companies)
+        this.subscriber = subscriber;
+        this.subscriber.next(immutable? this.sourceCompanies:this.companies)
     })
     return observable;
   }
@@ -64,7 +61,6 @@ export class CompanyService {
 
   public filterBy(key: keyof ICompany, text:string){
     this.companies =  this.sourceCompanies.filter(company => {
-      console.log(key)
       if((company[key] as string).toLowerCase().includes(text.toLowerCase())){
         return true;
       } else {

@@ -31,7 +31,6 @@ export class CompanyFilterComponent implements OnInit {
     })
     this.filterForm.valueChanges.subscribe(
       filterProperty => {
-        console.log(filterProperty)
         if(!filterProperty.selectKey) {
           filterProperty.selectKey = "business_name"
         }

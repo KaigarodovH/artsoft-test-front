@@ -27,9 +27,8 @@ export class CompanyDetailComponent implements OnInit {
   ngOnDestroy(){
     if (this.subscriber) {
         this.subscriber.unsubscribe()
-      }
-    console.log("del cl1")
-}
+    }
+  }
 
   getCompany():void {
     const id = Number(this.route.snapshot.paramMap.get('id'))
